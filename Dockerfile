@@ -8,7 +8,7 @@
 #
 ##
 ## Run with:
-# 
+#
 # docker run -p 30303:30303 -p 30303:30303/udp pyethapp
 #
 ## Data volume
@@ -20,8 +20,7 @@
 
 FROM python:2.7.9
 
-RUN apt-get update
-RUN apt-get install -y git-core
+RUN apt-get update && apt-get install -y git-core libgmp-dev
 
 RUN git clone https://github.com/ethereum/pyrlp /apps/pyrlp
 WORKDIR /apps/pyrlp
